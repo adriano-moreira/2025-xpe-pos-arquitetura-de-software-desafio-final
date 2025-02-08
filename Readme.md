@@ -1,15 +1,10 @@
 # Desafio Final Bootcamp Arquiteto(a) de Software
 
-## Link repositorio com implementação: https://github.com/adriano-moreira/2025-xpe-pos-arquitetura-de-software-desafio-final
+# vendas-online-api
 
-Implementacão utilizando:
+Implementação utilizando:
 - Java 21 (LTS atual em fevereiro 2025)
 - Quarkus 3.15.3 (LTS atual em fevereiro 2025)
-
-
-# Vendas-online-api
-
-repo: https
 
 
 ## Estrutura de pasta
@@ -25,23 +20,24 @@ repo: https
         └── ProdutoService.java
 ```
 
-## Diagrama de sequencia, apresentado o fluxo entre as classes para endpoints de Produto 
+---
+## Diagrama de sequencia, apresentado o fluxo geral entre as classes para endpoints
 ```mermaid
 sequenceDiagram
     actor bff as bff-*
         
     box Aplicação java/Quarkus    
-    participant ProdutoController
-    participant ProdutoService
-    participant ProdutoRepository
+    participant Controller
+    participant Service
+    participant Repository
     end
         
     participant Database
 
-bff ->> ProdutoController: 
-ProdutoController ->> ProdutoService: 
-ProdutoService ->> ProdutoRepository: 
-ProdutoRepository ->> Database: 
+bff ->> Controller: 
+Controller ->> Service: 
+Service ->> Repository: 
+Repository ->> Database: 
 
 
 ```
